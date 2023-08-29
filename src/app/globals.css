@@ -1,27 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+} */
+
+/* **Spectra** #2E5757 
+**Gossip** #D9F4B0
+**Moss Green** #9AD0A0 
+**Breaker Bay** #64A49C */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 640px;
+}
+html {
+  margin: 0 auto;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "Nanum Myeongjo", serif;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+main {
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  main {
+    max-width: 640px;
+  }
 }
