@@ -1,12 +1,15 @@
 type ListType = {
   [key: number]: string;
 };
+type ResultType = {
+  [key: string]: string;
+};
 
 export function recommandPlace(
   weatherId: number,
   temparature: number,
   feelsLikeTemparature: number
-): string {
+): ResultType {
   const placeList: ListType = { 1: "미술관", 2: "공원", 3: "둘레길" };
   const candidate = [];
 
@@ -20,9 +23,12 @@ export function recommandPlace(
 
   const relativeWarm = temparature - feelsLikeTemparature > 0 ? false : true;
 
-  const recommandResult = (meesageIdx: number): string => {
+  const recommandResult = (meesageIdx: number): ResultType => {
     const randomIdx: number = Math.ceil(Math.random() * candidate.length);
-    return `${recommendationMessage[meesageIdx]} 오늘은 ${placeList[randomIdx]} 어떠세요?`;
+    return {
+      resultMessage: recommendationMessage[meesageIdx],
+      resultPlace: placeList[randomIdx],
+    };
   };
 
   if (weatherId < 800) {
@@ -79,5 +85,8 @@ export function recommandPlace(
     }
   }
 
-  return "결과 없음";
+  return {
+    resultMessage: "",
+    resultPlace: "결과 없음",
+  };
 }
