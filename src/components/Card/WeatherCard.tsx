@@ -1,8 +1,6 @@
 import { recommandPlace } from "@/utils/recommandPlace";
 import { weatherInterpret } from "@/utils/weatherInterpret";
-import { InferGetStaticPropsType } from "next";
-import React, { useEffect, useState } from "react";
-import { WiCloud } from "react-icons/wi";
+import React from "react";
 
 async function WeatherCard() {
   const response = await fetch(

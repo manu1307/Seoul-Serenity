@@ -2,7 +2,6 @@ import CategoryCard from "@/components/Card/CategoryCard";
 import WeatherCard from "@/components/Card/WeatherCard";
 import Footer from "@/components/Layout/Footer";
 import Header from "@/components/Layout/Header";
-import Image from "next/image";
 
 export default function Home() {
   return (
