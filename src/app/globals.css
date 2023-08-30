@@ -43,6 +43,10 @@ main {
   max-width: 100%;
 }
 
+.categoryCard {
+  box-shadow: inset 0px -40px 10px 0px rgb(0, 0, 0);
+}
+
 @media (min-width: 640px) {
   body {
     font-size: 1rem;
