@@ -4,29 +4,41 @@ import Footer from "@/components/Layout/Footer";
 import Header from "@/components/Layout/Header";
 
 export default function Home() {
+  const CategoryItems = [
+    {
+      id: 1,
+      categoryName: "미술관",
+      imageUrl: "/images/art-museum.png",
+      alt: "art-musuem",
+      link: "/",
+    },
+    { id: 2, categoryName: "공원", imageUrl: "/images/park.png", alt: "park", link: "/" },
+    {
+      id: 3,
+      categoryName: "둘레길",
+      imageUrl: "/images/walking-road.png",
+      alt: "walking-road",
+      link: "/",
+    },
+  ];
   return (
     <main>
       <Header />
       <div>
         <div className="flex overflow-x-scroll gap-4 scrollbar-hide">
-          <CategoryCard
-            categoryName="미술관"
-            coverImageUrl="/images/art-museum.png"
-            alt="art-museum"
-            link="/"
-          />
-          <CategoryCard
-            categoryName="공원"
-            coverImageUrl="/images/park.png"
-            alt="art-museum"
-            link="/"
-          />
-          <CategoryCard
-            categoryName="둘레길"
-            coverImageUrl="/images/walking-road.png"
-            alt="art-museum"
-            link="/"
-          />
+          {CategoryItems.map((category) => {
+            const { id, categoryName, imageUrl, alt, link } = category;
+            return (
+              <div key={id}>
+                <CategoryCard
+                  categoryName={categoryName}
+                  coverImageUrl={imageUrl}
+                  alt={alt}
+                  link={link}
+                />
+              </div>
+            );
+          })}
         </div>
         <div>
           <WeatherCard />
