@@ -1,4 +1,5 @@
 import CategoryCard from "@/components/Card/CategoryCard";
+import ContentCard from "@/components/Card/ContentCard";
 import WeatherCard from "@/components/Card/WeatherCard";
 import Footer from "@/components/Layout/Footer";
 import Header from "@/components/Layout/Header";
@@ -43,7 +44,8 @@ export default function Home() {
         <div>
           <WeatherCard />
         </div>
-        <div>가까운 곳 3개 사진</div>
+
+        <ContentCard />
       </div>
       <Footer />
     </main>
